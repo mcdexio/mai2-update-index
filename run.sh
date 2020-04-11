@@ -1,2 +1,2 @@
-node update_index.js --keystore=k1.json --password= --rpc=http://server10.jy.mcarlo.com:8746 --amm=0x85F45280Fae9B14DB9cD442C9Efba606fCcc1Aef
+node update_index.js --keystore=k1.json --password= --rpc=YOUR_INFURA_OR_NODE --amm=0xF4CE6d5E9Cdcd6c91e303B87E27688f01B9Bb7bf
 

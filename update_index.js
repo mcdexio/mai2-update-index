@@ -35,11 +35,11 @@ async function checkPrice(args) {
     const { amm } = getAMM(args)
     const indexPriceAndTimestamp = await amm.methods.indexPrice().call()
     const indexPrice = new BigNumber(indexPriceAndTimestamp.price).shiftedBy(-18)
-    console.log(`index: ${indexPrice.toFixed()}`)
+    console.log(`       index: ${indexPrice.toFixed()}`)
 
     const funding = await amm.methods.lastFundingState().call()
     const fundingIndexPrice = new BigNumber(funding.lastIndexPrice).shiftedBy(-18)
-    console.log(`index: ${fundingIndexPrice.toFixed()}`)
+    console.log(`fundingIndex: ${fundingIndexPrice.toFixed()}`)
 
     return indexPrice.eq(fundingIndexPrice)
 }
@@ -66,8 +66,8 @@ async function updateIndex(args, gas) {
     const decryptedAccount = web3.eth.accounts.decrypt(keystore, args.password)
     const rawTransaction = {
         to: args.amm,
-        gas: 200000,
-        gasPrice: gas.fast.toFixed(),
+        gas: 400000,
+        gasPrice: gas.fastest.toFixed(),
         data: await amm.methods.updateIndex().encodeABI(),
     }
     console.log(rawTransaction)
@@ -81,8 +81,8 @@ async function main() {
     if (!args) {
         return
     }
-    const isTheSamePrice = checkPrice(args)
-    if (!isTheSamePrice) {
+    const isTheSamePrice = await checkPrice(args)
+    if (isTheSamePrice) {
         console.log('not modified. exit')
         return
     }
