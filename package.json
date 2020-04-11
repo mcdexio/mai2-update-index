@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "console-stamp": "^0.2.9",
+    "node-fetch": "^2.6.0",
+    "web3": "^1.2.6"
+  }
+}

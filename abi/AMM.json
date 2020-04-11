@@ -1,0 +1,65 @@
+[
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "updateIndex",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "lastFundingState",
+    "outputs": [
+      {
+        "components": [
+          {
+            "name": "lastFundingTime",
+            "type": "uint256"
+          },
+          {
+            "name": "lastPremium",
+            "type": "int256"
+          },
+          {
+            "name": "lastEMAPremium",
+            "type": "int256"
+          },
+          {
+            "name": "lastIndexPrice",
+            "type": "uint256"
+          },
+          {
+            "name": "accumulatedFundingPerContract",
+            "type": "int256"
+          }
+        ],
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "indexPrice",
+    "outputs": [
+      {
+        "name": "price",
+        "type": "uint256"
+      },
+      {
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
