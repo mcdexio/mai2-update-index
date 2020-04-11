@@ -66,7 +66,7 @@ async function updateIndex(args, gas) {
     const decryptedAccount = web3.eth.accounts.decrypt(keystore, args.password)
     const rawTransaction = {
         to: args.amm,
-        gas: 200000,
+        gas: 400000,
         gasPrice: gas.fast.toFixed(),
         data: await amm.methods.updateIndex().encodeABI(),
     }
