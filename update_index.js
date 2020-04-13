@@ -81,7 +81,7 @@ async function main() {
     if (!args) {
         return
     }
-    const isTheSamePrice = checkPrice(args)
+    const isTheSamePrice = await checkPrice(args)
     if (isTheSamePrice) {
         console.log('not modified. exit')
         return
