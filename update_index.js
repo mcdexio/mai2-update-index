@@ -67,7 +67,7 @@ async function updateIndex(args, gas) {
     const rawTransaction = {
         to: args.amm,
         gas: 400000,
-        gasPrice: gas.fast.toFixed(),
+        gasPrice: gas.fastest.toFixed(),
         data: await amm.methods.updateIndex().encodeABI(),
     }
     console.log(rawTransaction)
